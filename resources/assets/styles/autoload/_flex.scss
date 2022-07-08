@@ -1,0 +1,90 @@
+/* Flexbox
+     ========================================================================== */
+
+.flex-it {
+    display: flex;
+}
+
+/* Flex-direction
+               ========*/
+
+.f-row {
+    flex-direction: row;
+}
+
+.f-row-r {
+    flex-direction: row-reverse;
+}
+
+.f-col {
+    flex-direction: column;
+}
+
+.f-col-r {
+    flex-direction: column-reverse;
+}
+
+/* Flex-wrap
+               ========*/
+
+.f-wrap {
+    flex-wrap: wrap;
+}
+
+.f-wrap-r {
+    flex-wrap: wrap-reverse;
+}
+
+.f-wrap-no {
+    flex-wrap: nowrap;
+}
+
+/* Justify-content
+               ========*/
+
+.f-just-start {
+    justify-content: flex-start;
+}
+
+.f-just-end {
+    justify-content: flex-end;
+}
+
+.f-just-center {
+    justify-content: center;
+}
+
+.f-just-between {
+    justify-content: space-between;
+}
+
+.f-just-around {
+    justify-content: space-around;
+}
+
+.f-just-around {
+    justify-content: space-around;
+}
+
+/* Align-items
+               ========*/
+
+.f-align-start {
+    align-items: flex-start;
+}
+
+.f-align-end {
+    align-items: flex-end;
+}
+
+.f-align-center {
+    align-items: center;
+}
+
+.f-align-stretch {
+    align-items: stretch;
+}
+
+.f-align-base {
+    align-items: baseline;
+}

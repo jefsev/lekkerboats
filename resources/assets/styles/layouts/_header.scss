@@ -1,0 +1,72 @@
+// TODO: .banner .nav li {}
+// TODO: .banner .nav a {}
+
+.banner {
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    a.brand {
+        width: 52px;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.nav-primary {
+    .mob-menu-head,
+    .mob-menu-foot {
+        display: none;
+    }
+    ul {
+        li {
+            list-style: none;
+            display: inline-block;
+
+            a {
+                font-size: 16px;
+                font-weight: 700;
+                text-decoration: none;
+                margin: 0 30px;
+            }
+        }
+
+        li.external-link {
+            a {
+                position: relative;
+
+                    
+
+                &:after {
+                    content: "";
+                    background: url("../images/external-link.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    width: 12px;
+                    height: 12px;
+                    padding-left: 24px;
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+}
+
+.nav-left {
+    .lang__toggle {
+        margin-left: 26px;
+
+        select {
+            border: none;
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+        }
+    }
+
+    .menu__toggle {
+        display: none;
+    }
+}

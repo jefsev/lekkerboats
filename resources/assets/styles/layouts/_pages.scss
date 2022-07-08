@@ -1,0 +1,651 @@
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+.content {
+    overflow-x: hidden;
+}
+
+body.bodyOverlay::after {
+    background: #333;
+    opacity: 0.75;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: 50;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container__outer {
+    max-width: 1460px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.page__hero {
+    padding-bottom: 80px;
+
+    .hero__text {
+        width: 50%;
+        padding-right: 45px;
+
+        h1 {
+            font-size: 70px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        h2 {
+            font-size: 40px;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 32px;
+        }
+
+        .btn__row {
+            .btn {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    .hero__img {
+        width: 70%;
+        margin-right: -20%;
+        height: 650px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// Booking form section
+
+.container__booking-form {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+
+    .form__content {
+        position: relative;
+        z-index: 5;
+
+        .wrap {
+            max-width: 512px;
+            width: 100%;
+
+            p {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        .background__grey-skew {
+            content: "";
+            background: #fafafa;
+            width: calc(30% + 120px);
+            height: 100%;
+            position: relative;
+            z-index: 2;
+
+            &::after {
+                content: "";
+                width: 80%;
+                position: absolute;
+                z-index: 1;
+                right: -50%;
+                top: 0;
+                bottom: 0;
+                height: 100%;
+                background: #fafafa;
+                transform: skewX(-10deg);
+                backface-visibility: hidden;
+            }
+        }
+
+        .background__video {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            margin-left: -120px;
+
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+// FAQ section
+
+.container__faq {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 20px;
+
+    .faq__q {
+        border-bottom: 1px solid $black;
+        font-size: 20px;
+        font-weight: 400;
+        padding-bottom: 15px;
+        padding-top: 10px;
+        cursor: pointer;
+
+        img {
+            float: right;
+            transition: 0.2s ease-in;
+        }
+    }
+
+    .faq__q.faq_active {
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    .faq__a {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: none;
+
+        p,
+        ul,
+        li,
+        ol,
+        span,
+        a {
+            font-size: 16px;
+            line-height: 30px;
+        }
+    }
+
+    .faq__a:first-of-type {
+        display: block;
+    }
+}
+
+// Discover section
+
+.container__discover {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    position: relative;
+    height: 663px;
+
+    .bg__img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        object-fit: cover;
+        max-width: 995px;
+        width: 100%;
+        height: 663px;
+    }
+
+    .discover__card {
+        max-width: 671px;
+        width: 100%;
+        background: $black;
+        padding: 80px;
+        position: relative;
+        z-index: 2;
+
+        h2 {
+            margin-bottom: 16px;
+        }
+
+        h2,
+        p {
+            color: #fff;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+    }
+}
+
+.vimeo__popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(51, 51, 51, 0.74);
+    text-align: center;
+    z-index: 999;
+    margin: 0 auto;
+
+    .popup__holder {
+        position: relative;
+        max-width: 1000px;
+        width: 100%;
+        height: 580px;
+        margin: 0 auto;
+        top: 50%;
+        margin-top: -290px;
+
+        .close {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: -30px;
+            z-index: 2;
+            cursor: pointer;
+        }
+    }
+}
+
+// Locations / map
+
+.container__locations {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .map__intro {
+        max-width: 512px;
+        width: 100%;
+    }
+
+    .wrap__map {
+        margin-top: 10px;
+        margin-bottom: 26px;
+    }
+}
+
+// Endpoint pages
+
+.container.container__endpoint {
+    max-width: 640px;
+    margin: 0 auto;
+    height: calc(100vh - 262px);
+
+    h1 {
+        font-size: 80px;
+        line-height: 90px;
+        margin-bottom: 16px;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 20px;
+
+        a {
+            font-size: 20px;
+        }
+    }
+
+    .btn__row {
+        margin-top: 16px;
+
+        .btn {
+            margin: 0 6px;
+            min-width: 192px;
+            text-align: center;
+        }
+    }
+}
+
+// Repsonsive
+
+@media screen and (max-width: 1180px) {
+    //header
+
+    .banner {
+        a.brand {
+            max-width: 40px;
+            margin-bottom: -9px;
+
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .nav-primary {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        max-width: 480px;
+        width: 85%;
+        height: 100%;
+        background: #fff;
+        transform: skewX(-5deg) translateX(125%);
+        transition: 0.2s ease-in-out;
+        padding-top: 30px;
+        z-index: 99999;
+
+        .mob-menu-head {
+            display: flex;
+            transform: skewX(5deg);
+            padding-left: 29px;
+            padding-right: 29px;
+            width: 100%;
+        }
+
+        .mob-menu-foot {
+            display: flex;
+            transform: skewX(5deg);
+            padding-bottom: 30px;
+            width: 100%;
+
+            select {
+                border: none;
+                font-family: "Roboto", sans-serif;
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+
+        .menu-menu-1-container,
+        .menu-menu-2-container {
+            flex-grow: 2;
+            transform: skewX(5deg);
+            padding-left: 29px;
+            padding-top: 45px;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+
+                a {
+                    font-size: 18px;
+                    display: block;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+
+    .nav-primary.active {
+        transform: skewX(-5deg) translateX(-30px);
+    }
+
+    .nav-left {
+        .menu__toggle {
+            display: block;
+            margin-left: 20px;
+            margin-top: 9px;
+            cursor: pointer;
+        }
+
+        .lang__toggle {
+            margin-left: 20px;
+        }
+    }
+
+    //typo
+
+    p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    //page
+
+    .page__hero {
+        .hero__text {
+            h1 {
+                font-size: 45px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 28px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .page__hero {
+        flex-wrap: wrap-reverse;
+        padding-bottom: 45px;
+
+        .hero__img {
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            margin-right: -20px;
+            height: 300px;
+            position: relative;
+
+            img {
+                z-index: 0;
+            }
+
+            &::after {
+                background: #333;
+                opacity: 0.38;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                content: "";
+                z-index: 1;
+            }
+        }
+
+        .hero__text {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding-right: 0;
+
+            h1 {
+                margin-top: -172px;
+                color: #fff;
+            }
+
+            h2 {
+                margin-bottom: 40px;
+                color: #fff;
+            }
+        }
+    }
+
+    .container__locations {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .container__booking-form {
+        padding-top: 45px;
+        padding-bottom: 15px;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap-reverse;
+
+        .form__content {
+            background: #fafafa;
+            width: 100%;
+
+            .wrap {
+                max-width: 100%;
+                padding-top: 75px;
+                padding-bottom: 45px;
+            }
+        }
+
+        .background {
+            width: 100%;
+            position: relative;
+
+            .background__grey-skew {
+                display: none;
+            }
+
+            .background__video {
+                width: 100%;
+                height: 370px;
+                margin-left: 0;
+            }
+        }
+    }
+
+    .container__faq {
+        h2 {
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        .faq__q {
+            font-size: 16px;
+        }
+
+        .faq__a {
+            font-size: 14px;
+        }
+    }
+
+    .container__discover {
+        margin-top: 0;
+        margin-bottom: 45px;
+        padding-bottom: 0;
+        padding-top: 0;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        height: 100%;
+
+        .bg__img {
+            width: calc(100% + 20px);
+            margin-left: -20px;
+            position: relative;
+        }
+
+        .discover__card {
+            width: calc(100% + 20px);
+            padding: 60px 35px;
+            margin-right: -20px;
+            margin-top: -165px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container.container__endpoint {
+        max-width: 640px;
+        margin: 0 auto;
+        height: calc(100vh - 262px);
+        padding-top: 26px;
+    
+        h1 {
+            font-size: 40px;
+            line-height: 50px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+    
+        p {
+            font-size: 14px;
+    
+            a {
+                font-size: 14px;
+            }
+        }
+    
+        .btn__row {
+            margin-top: 16px;
+    
+            .btn {
+                min-width: 128px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .vimeo__popup .popup__holder {
+        height: 278px;
+        margin-top: -200px;
+        width: calc(100% - 20px);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    h2 {
+        line-height: 30px;
+    }
+
+    .page__hero {
+        .hero__text {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    }
+}

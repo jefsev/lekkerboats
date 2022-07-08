@@ -1,0 +1,208 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    padding: 14px 46px;
+    transform: skewX(-10deg);
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    background: $black;
+    border: 1px solid $black;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn {
+    transform: skewX(-10deg);
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-size: 16px;
+    font-weight: 700;
+
+    span,
+    a {
+        padding: 14px 46px;
+        display: inline-block;
+        transform: skewX(10deg);
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.btn--white {
+    background: #fff;
+
+    span,
+    a {
+        color: $black;
+    }
+}
+
+.btn--black {
+    background: $black;
+    overflow: hidden;
+
+    span,
+    a {
+        color: #fff;
+        position: relative;
+        z-index: 5;
+    }
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        background: #fff;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        transition: 0.2s ease-in-out;
+        transform: translateY(-120%);
+        opacity: 0;
+    }
+
+    &:hover {
+        border: 1px solid $black;
+
+        &::after {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        span,
+        a {
+            color: $black;
+        }
+    }
+}
+
+.btn--border {
+    background: transparent;
+    border: 1px solid $black;
+    overflow: hidden;
+
+    span,
+    a {
+        color: $black;
+        position: relative;
+        z-index: 2;
+        transition: 0.3s ease-in-out;
+    }
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        background: $black;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        transition: 0.2s ease-in-out;
+        transform: translateY(-120%);
+        opacity: 0;
+    }
+
+    &:hover {
+        &::after {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        span,
+        a {
+            color: #fff;
+        }
+    }
+}
+
+.btn--icon {
+    a,
+    span {
+        img {
+            margin-left: 15px;
+            margin-bottom: -3px;
+            transform: skewX(0);
+        }
+    }
+}
+
+.btn--round {
+    padding: 12px 30px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn--white-round {
+    color: $black;
+    text-transform: uppercase;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    text-decoration: none;
+
+    &:hover {
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0);
+        transform: translateY(2px);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .btn {
+        font-size: 14px;
+
+        span,
+        a {
+            padding: 14px 21px;
+            font-size: 14px;
+        }
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        font-size: 14px;
+    }
+
+    .btn--round {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .btn {
+        font-size: 12px;
+
+        span,
+        a {
+            padding: 14px 19px;
+            font-size: 12px;
+        }
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        font-size: 12px;
+    }
+
+    .btn--round {
+        font-size: 12px;
+        padding: 12px 22px;
+    }
+}

@@ -1,0 +1,16 @@
+/** Search form */
+// TODO: .search-form {}
+// TODO: .search-form label {}
+// TODO: .search-form .search-field {}
+// TODO: .search-form .search-submit {}
+
+.gform_wrapper.gravity-theme .gfield input.large {
+    border: none;
+    border-bottom: 1px solid $black;
+    background: transparent;
+}
+
+.gform_wrapper.gravity-theme .gfield select.large {
+    border: 1px solid $black;
+    background: transparent;
+}
